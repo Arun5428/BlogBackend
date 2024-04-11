@@ -12,6 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Access(AccessType.FIELD)
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
