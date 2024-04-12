@@ -45,7 +45,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<scope>42.2.23</scope>
+			<scope>42.2.24</scope>
 		</dependency>
 
 
