@@ -41,7 +41,8 @@ RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
 
 
 # Copy the built JAR file from the build stage
-COPY --from=build /target/BlogApplication-0.0.1-SNAPSHOT.jar /app/BlogApplication.jar
+COPY --from=build /target/BlogApplication-0.0.1-SNAPSHOT.jar BlogApplication.jar
+ENTRYPOINT ["java", "-jar",BlogApplication.jar"]
 #COPY --from=build /target/BlogApplication-0.0.1-SNAPSHOT.jar BlogApplication.jar
 
 
@@ -56,4 +57,4 @@ EXPOSE 8080
 
 # Run the application
 #ENTRYPOINT ["java","-jar","BlogApplication.jar"]
-ENTRYPOINT ["java", "-jar", "postgresql.jar:/BlogApplication.jar"]
+
