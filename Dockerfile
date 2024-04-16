@@ -55,4 +55,5 @@ RUN wget -O /app/postgresql.jar https://jdbc.postgresql.org/download/postgresql-
 EXPOSE 8080
 
 # Run the application
-ENTRYPOINT ["java", "-cp", "/app/postgresql.jar:/app/BlogApplication.jar", "com.Blog.BlogApplication"]
+#ENTRYPOINT ["java","-jar","BlogApplication.jar"]
+ENTRYPOINT ["java", "-jar", "/app/postgresql.jar:/app/BlogApplication.jar"]
