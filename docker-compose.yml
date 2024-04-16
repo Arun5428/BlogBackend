@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  app:
+    image: 'docker-spring-boot-postgres:latest'
+    build:
+      context: .
+    container_name: app
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dpg-coc9r1e3e1ms73b0tk10-a.oregon-postgres.render.com:5432/blog_serverses_p027
+      - SPRING_DATASOURCE_USERNAME=blog_serverses_p027_user
+      - SPRING_DATASOURCE_PASSWORD=iLmkyRLxyYWTeFCqnTw1Y5DMGTkkwjPD
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: 'postgres:13.1-alpine'
+    container_name: db
+    environment:
+      - POSTGRES_USER=compose-postgres
+      - POSTGRES_PASSWORD=compose-postgres
