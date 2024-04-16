@@ -56,4 +56,4 @@ EXPOSE 8080
 
 # Run the application
 #ENTRYPOINT ["java","-jar","BlogApplication.jar"]
-ENTRYPOINT ["java", "-jar", "/app/postgresql.jar:/app/BlogApplication.jar"]
+ENTRYPOINT ["java", "-jar", "BlogApplication.jar"]
